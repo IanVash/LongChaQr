@@ -1,0 +1,36 @@
+insert into public.products (
+  id,
+  name,
+  category,
+  description,
+  image,
+  prices,
+  toppings,
+  available,
+  tag,
+  display_order
+) values
+('milk-tea-taro', 'Milk Tea Taro', 'Milk Tea', 'Taro cremoso con notas suaves de vainilla y una textura sedosa de té con leche.', '/images/placeholder-drink.svg', '{"16oz": 3.75, "22oz": 4.5}', array['Tapioca Negra', 'Jelly de Café'], true, 'Popular', 10),
+('thai-milk-tea', 'Thai Milk Tea', 'Milk Tea', 'Té tailandés aromático, leche cremosa y dulzor profundo con acabado especiado.', '/images/placeholder-drink.svg', '{"16oz": 3.75, "22oz": 4.5}', array['Tapioca Negra', 'Popping Boba de Lychee'], true, 'Recomendado', 20),
+('brown-sugar-milk-tea', 'Brown Sugar Milk Tea', 'Milk Tea', 'Leche fresca con jarabe de azúcar morena, perlas suaves y notas acarameladas.', '/images/placeholder-drink.svg', '{"16oz": 4.25, "22oz": 5}', array['Tapioca Negra'], true, 'Popular', 30),
+('dirty-chai', 'Dirty Chai', 'Iced Coffee', 'Chai especiado con espresso frío, leche aterciopelada y un balance elegante.', '/images/placeholder-drink.svg', '{"16oz": 4.25, "22oz": 5}', array['Jelly de Café'], true, 'Nuevo', 40),
+('iced-cappuccino', 'Iced Cappuccino', 'Iced Coffee', 'Espresso frío con leche espumada, cuerpo ligero y final tostado.', '/images/placeholder-drink.svg', '{"16oz": 3.75, "22oz": 4.5}', array['Jelly de Café'], true, null, 50),
+('iced-coffee-caramelo', 'Iced Coffee Caramelo', 'Iced Coffee', 'Café frío con caramelo suave, leche fresca y un toque dulce persistente.', '/images/placeholder-drink.svg', '{"16oz": 3.95, "22oz": 4.75}', array['Tapioca Negra', 'Jelly de Café'], false, null, 60),
+('refresh-fresa-maracuya', 'Refresh Fresa Maracuyá', 'Refresh Tea', 'Infusión fría, fresa brillante y maracuyá tropical con frescura ligera.', '/images/placeholder-drink.svg', '{"16oz": 3.5, "24oz": 4.5}', array['Popping Boba de Lychee'], true, 'Recomendado', 70),
+('refresh-frutos-rojos', 'Refresh Frutos Rojos', 'Refresh Tea', 'Frutos rojos, té frío y acidez delicada para una bebida limpia y vibrante.', '/images/placeholder-drink.svg', '{"16oz": 3.5, "24oz": 4.5}', array['Popping Boba de Lychee'], true, null, 80),
+('smoothie-mango', 'Smoothie de Mango', 'Smoothies', 'Mango maduro, textura cremosa y dulzor tropical servido bien frío.', '/images/placeholder-drink.svg', '{"16oz": 4, "24oz": 5}', array['Popping Boba de Lychee'], true, 'Nuevo', 90),
+('smoothie-fresa', 'Smoothie de Fresa', 'Smoothies', 'Fresa fresca, base cremosa y un perfil frutal suave para cualquier hora.', '/images/placeholder-drink.svg', '{"16oz": 4, "24oz": 5}', array['Tapioca Negra', 'Popping Boba de Lychee'], true, null, 100),
+('tapioca-negra', 'Tapioca Negra', 'Toppings', 'Perlas clásicas de tapioca con mordida suave y dulzor de azúcar morena.', '/images/placeholder-drink.svg', '{"16oz": 0.75}', '{}'::text[], true, 'Popular', 110),
+('popping-boba-lychee', 'Popping Boba de Lychee', 'Toppings', 'Perlas explosivas de lychee que agregan frescura frutal a cada sorbo.', '/images/placeholder-drink.svg', '{"16oz": 0.85}', '{}'::text[], true, null, 120),
+('jelly-cafe', 'Jelly de Café', 'Toppings', 'Cubos suaves de café con amargor delicado y textura refrescante.', '/images/placeholder-drink.svg', '{"16oz": 0.85}', '{}'::text[], true, null, 130),
+('promo-duo-long-cha', 'Dúo Long Cha', 'Promociones', 'Dos bebidas seleccionadas para compartir una pausa cremosa y refrescante.', '/images/placeholder-drink.svg', '{"22oz": 8.5, "24oz": 9.25}', array['Tapioca Negra', 'Popping Boba de Lychee'], true, 'Promoción', 140)
+on conflict (id) do update set
+  name = excluded.name,
+  category = excluded.category,
+  description = excluded.description,
+  image = excluded.image,
+  prices = excluded.prices,
+  toppings = excluded.toppings,
+  available = excluded.available,
+  tag = excluded.tag,
+  display_order = excluded.display_order;
