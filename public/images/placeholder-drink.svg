@@ -1,0 +1,18 @@
+<svg width="900" height="1125" viewBox="0 0 900 1125" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="900" height="1125" fill="#FBF7EF"/>
+  <rect x="86" y="80" width="728" height="965" rx="36" fill="#FFFFFF"/>
+  <path d="M208 204C208 176.386 230.386 154 258 154H642C669.614 154 692 176.386 692 204V244H208V204Z" fill="#17201C"/>
+  <path d="M253 245H647L607 891C604.69 928.239 573.802 957.25 536.491 957.25H363.509C326.198 957.25 295.31 928.239 293 891L253 245Z" fill="#DDEBE4"/>
+  <path d="M286 315H614L582 850C580.362 877.399 557.647 898.75 530.199 898.75H369.801C342.353 898.75 319.638 877.399 318 850L286 315Z" fill="#E9B5C8"/>
+  <path d="M312 500C387 462 468 544 544 504C575 488 598 460 624 439L601 834C599.904 852.658 584.439 867.25 565.749 867.25H334.251C315.561 867.25 300.096 852.658 299 834L282 541C293 526 300 506 312 500Z" fill="#C7D8A3"/>
+  <path d="M224 245H676" stroke="#2F6F56" stroke-width="28" stroke-linecap="round"/>
+  <path d="M368 154L420 88H548" stroke="#2F6F56" stroke-width="30" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="374" cy="787" r="28" fill="#17201C"/>
+  <circle cx="451" cy="826" r="30" fill="#17201C"/>
+  <circle cx="528" cy="779" r="27" fill="#17201C"/>
+  <circle cx="492" cy="720" r="22" fill="#17201C"/>
+  <circle cx="409" cy="718" r="20" fill="#17201C"/>
+  <path d="M341 401C390 374 498 371 563 403" stroke="#FFFFFF" stroke-width="26" stroke-linecap="round"/>
+  <text x="450" y="1032" text-anchor="middle" fill="#17201C" font-family="Arial, Helvetica, sans-serif" font-size="54" font-weight="700">LONG CHA</text>
+  <text x="450" y="1082" text-anchor="middle" fill="#2F6F56" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700">Fotos reales: /public/images/products</text>
+</svg>
