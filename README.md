@@ -71,6 +71,76 @@ La capa lista para migrar a Supabase está en:
 src/server/menu-repository.ts
 ```
 
+## Panel administrativo
+
+El panel está en:
+
+```txt
+/admin
+```
+
+Sirve para:
+
+- Editar nombres, categorías, descripciones y disponibilidad.
+- Cambiar precios de 16oz, 22oz y 24oz.
+- Cambiar toppings recomendados.
+- Subir imágenes de productos a Supabase Storage.
+
+Para producción en Vercel necesitas configurar Supabase, porque Vercel no guarda archivos subidos dentro del proyecto.
+
+### 1. Crear Supabase
+
+1. Crea un proyecto en Supabase.
+2. Abre el SQL Editor.
+3. Ejecuta el contenido de:
+
+```txt
+supabase/schema.sql
+```
+
+4. Luego ejecuta el contenido de:
+
+```txt
+supabase/seed.sql
+```
+
+Esto crea la tabla `products`, el bucket público `menu-images` y carga los productos iniciales.
+
+### 2. Variables de entorno
+
+Copia `.env.example` a `.env.local` para desarrollo local:
+
+```bash
+cp .env.example .env.local
+```
+
+Configura:
+
+```txt
+ADMIN_PASSWORD
+SUPABASE_URL
+SUPABASE_SERVICE_ROLE_KEY
+SUPABASE_STORAGE_BUCKET
+```
+
+En Vercel agrega esas mismas variables en:
+
+```txt
+Project Settings > Environment Variables
+```
+
+Importante: `SUPABASE_SERVICE_ROLE_KEY` es privada. No la compartas ni la pongas con prefijo `NEXT_PUBLIC`.
+
+### 3. Editar productos
+
+1. Entra a `/admin`.
+2. Ingresa la contraseña definida en `ADMIN_PASSWORD`.
+3. Selecciona un producto.
+4. Cambia precios o sube imagen.
+5. Haz clic en `Guardar`.
+
+El menú público empezará a leer desde Supabase cuando las variables estén configuradas. Si no hay variables de Supabase, seguirá usando `src/data/menu.ts`.
+
 ## Publicar en Vercel
 
 1. Sube el proyecto a GitHub.

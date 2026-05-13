@@ -6,6 +6,8 @@ import { MenuExperience } from "@/components/MenuExperience";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { getMenuRepository } from "@/server/menu-repository";
 
+export const dynamic = "force-dynamic";
+
 export default async function Home() {
   const repository = getMenuRepository();
   const [categories, products] = await Promise.all([

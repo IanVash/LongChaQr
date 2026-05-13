@@ -6,6 +6,11 @@ import {
   type MenuProduct,
   type ProductTag
 } from "@/data/menu";
+import {
+  getSupabaseProductById,
+  listSupabaseProducts
+} from "./supabase-menu";
+import { isSupabaseConfigured } from "./supabase";
 
 export type ProductFilters = {
   category?: MenuCategory;
@@ -55,6 +60,21 @@ const localMenuRepository: MenuRepository = {
   }
 };
 
+const supabaseMenuRepository: MenuRepository = {
+  async getBusinessInfo() {
+    return businessInfo;
+  },
+  async listCategories() {
+    return MENU_CATEGORIES;
+  },
+  async listProducts(filters = {}) {
+    return listSupabaseProducts(filters);
+  },
+  async getProductById(id) {
+    return getSupabaseProductById(id);
+  }
+};
+
 export function getMenuRepository() {
-  return localMenuRepository;
+  return isSupabaseConfigured() ? supabaseMenuRepository : localMenuRepository;
 }
