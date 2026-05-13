@@ -7,8 +7,8 @@ export type SupabaseConfig = {
 };
 
 export function getSupabaseConfig(): SupabaseConfig | null {
-  const url = process.env.https://jfvcfxanvikmtvsuyskc.supabase.co/rest/v1/;
-  const serviceRoleKey = process.env.sb_publishable_lC_YBQP60d0oQrqczuDYiQ_y-Uf4tSh;
+  const url = process.env.https:SUPABASE_URL;
+  const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
 
   if (!url || !serviceRoleKey) {
     return null;
